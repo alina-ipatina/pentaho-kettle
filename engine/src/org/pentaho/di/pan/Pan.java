@@ -383,7 +383,7 @@ public class Pan {
         if ( trans == null && !Utils.isEmpty( optionFilename ) ) {
 
           String fileName = optionFilename.toString();
-          if ( !new File( fileName ).isAbsolute() ) {
+          if ( !new File( fileName ).isAbsolute() && !fileName.matches( "^zip:file:[/].*" ) ) {
             fileName = initialDir.toString() + fileName;
           }
 

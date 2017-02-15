@@ -383,7 +383,7 @@ public class Kitchen {
         if ( !Utils.isEmpty( optionFilename ) && job == null ) {
           blockAndThrow( kettleInitFuture );
           String fileName = optionFilename.toString();
-          if ( !new File( fileName ).isAbsolute() ) {
+          if ( !new File( fileName ).isAbsolute() && !fileName.matches( "^zip:file:[/].*" ) ) {
             fileName = initialDir.toString() + fileName;
           }
 
